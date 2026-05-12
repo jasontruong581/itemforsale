@@ -9,19 +9,19 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --color-page: #f7f5ef;
-  --color-text: #162033;
-  --color-muted: #5f6777;
-  --color-border: rgba(22, 32, 51, 0.1);
-  --color-card: rgba(255, 255, 255, 0.74);
-  --color-card-strong: rgba(255, 255, 255, 0.9);
-  --color-card-muted: rgba(255, 255, 255, 0.72);
-  --color-primary: #1dc8ed;
-  --color-primary-strong: #0ea5c8;
+  --color-page: #f4f8fb;
+  --color-text: #142033;
+  --color-muted: #607086;
+  --color-border: rgba(20, 32, 51, 0.09);
+  --color-card: rgba(255, 255, 255, 0.76);
+  --color-card-strong: rgba(255, 255, 255, 0.92);
+  --color-card-muted: rgba(249, 252, 255, 0.76);
+  --color-primary: #35cceb;
+  --color-primary-strong: #0fa8ca;
   --color-primary-text: #07121d;
   --color-button-dark: #141d32;
   --color-button-dark-text: #f8fafc;
-  --color-shadow: rgba(90, 102, 131, 0.18);
+  --color-shadow: rgba(88, 112, 149, 0.16);
 }
 
 html {
@@ -72,10 +72,11 @@ button {
 
 .page-bg {
   background:
-    radial-gradient(circle at 12% 18%, rgba(41, 196, 232, 0.18), transparent 23%),
-    radial-gradient(circle at 86% 16%, rgba(253, 224, 71, 0.22), transparent 21%),
-    radial-gradient(circle at 72% 70%, rgba(129, 140, 248, 0.14), transparent 24%),
-    linear-gradient(180deg, #fffdf7 0%, #fbf9f2 42%, #f5f3ea 100%);
+    radial-gradient(circle at 14% 15%, rgba(56, 189, 248, 0.2), transparent 24%),
+    radial-gradient(circle at 82% 14%, rgba(186, 230, 253, 0.4), transparent 20%),
+    radial-gradient(circle at 72% 70%, rgba(125, 211, 252, 0.2), transparent 24%),
+    radial-gradient(circle at 88% 84%, rgba(224, 242, 254, 0.6), transparent 18%),
+    linear-gradient(180deg, #fcfeff 0%, #f6fbff 42%, #eef6fb 100%);
 }
 
 html[data-theme='night'] .page-bg {
@@ -116,6 +117,16 @@ html[data-theme='night'] .page-grid {
 
 .eyebrow {
   color: var(--color-primary-strong);
+}
+
+.heading-display {
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.heading-section {
+  letter-spacing: -0.045em;
+  line-height: 1;
 }
 
 .reveal {

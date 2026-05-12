@@ -26,7 +26,7 @@ export function ProductCard({ product, defaultContactUrl }: ProductCardProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,23,42,0.68)] via-[rgba(15,23,42,0.12)] to-transparent" />
           <span
-            className={`absolute left-4 top-4 rounded-full border px-3 py-1 text-xs font-semibold tracking-[0.24em] uppercase ${
+            className={`absolute left-4 top-4 rounded-full border px-3 py-1 text-[11px] font-semibold tracking-[0.24em] uppercase ${
               isSold
                 ? 'border-rose-300/55 bg-rose-200/55 text-rose-950'
                 : 'border-emerald-300/55 bg-emerald-100/75 text-emerald-950'
@@ -36,16 +36,16 @@ export function ProductCard({ product, defaultContactUrl }: ProductCardProps) {
           </span>
         </div>
 
-        <div className="flex flex-1 flex-col justify-between gap-6 p-5">
+        <div className="flex flex-1 flex-col justify-between gap-7 p-6">
           <div className="space-y-3">
-            <h3 className="line-clamp-2 min-h-[3.5rem] text-xl font-semibold tracking-tight text-[var(--color-text)]">
+            <h3 className="line-clamp-2 min-h-[3.25rem] text-[1.35rem] font-semibold tracking-[-0.04em] text-[var(--color-text)]">
               {product.name}
             </h3>
-            <p className="text-3xl font-black tracking-tight text-[var(--color-primary-strong)]">
+            <p className="text-[2.1rem] font-black tracking-[-0.05em] text-[var(--color-primary-strong)]">
               {product.price}
             </p>
             {product.note ? (
-              <p className="line-clamp-3 min-h-[4.5rem] text-sm leading-6 text-[var(--color-muted)]">
+              <p className="line-clamp-3 min-h-[4.5rem] text-[15px] leading-7 text-[var(--color-muted)]">
                 {product.note}
               </p>
             ) : (

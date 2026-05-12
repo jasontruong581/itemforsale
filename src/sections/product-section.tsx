@@ -31,8 +31,8 @@ export function ProductSection({
       <div className="mx-auto max-w-7xl space-y-8">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <p className="eyebrow text-sm uppercase tracking-[0.3em]">Danh sách sản phẩm</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl">
+            <p className="eyebrow text-[11px] uppercase tracking-[0.4em]">Danh sách sản phẩm</p>
+            <h2 className="heading-section mt-3 max-w-3xl text-3xl font-bold text-[var(--color-text)] sm:text-4xl">
               Chọn món hợp gu, xem giá ngay, rồi nhắn mình để chốt nhanh.
             </h2>
           </div>
