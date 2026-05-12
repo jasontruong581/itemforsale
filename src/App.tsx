@@ -81,6 +81,15 @@ function App() {
 
   const availableProducts = products.filter((product) => product.status === 'available').length
 
+  const statusMessage =
+    loadState === 'loading'
+      ? 'Đang nạp dữ liệu từ Google Sheet...'
+      : loadState === 'error'
+        ? `Không tải được Google Sheet nên site đang dùng mock data sample. Chi tiết: ${errorMessage}`
+        : hasRemoteSheet
+          ? 'Dữ liệu hiện đang lấy từ Google Sheet public feed.'
+          : 'Site đang chạy với mock data sample. Thêm VITE_GOOGLE_SHEET_CSV_URL để chuyển sang dữ liệu thật.'
+
   return (
     <div
       data-theme={theme}
@@ -97,34 +106,12 @@ function App() {
           onToggleTheme={() => setTheme((current) => (current === 'day' ? 'night' : 'day'))}
         />
 
-        <section className="px-6 pt-1 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-7xl">
-            <div className="surface-panel rounded-[1.25rem] px-5 py-3 text-sm text-[var(--color-muted)]">
-              {loadState === 'loading' ? <p>Đang nạp dữ liệu từ Google Sheet...</p> : null}
-              {loadState === 'error' ? (
-                <p>
-                  Không tải được Google Sheet nên site đang dùng mock data sample. Chi tiết:{' '}
-                  {errorMessage}
-                </p>
-              ) : null}
-              {loadState === 'ready' && hasRemoteSheet ? (
-                <p>Dữ liệu hiện đang lấy từ Google Sheet public feed.</p>
-              ) : null}
-              {loadState === 'ready' && !hasRemoteSheet ? (
-                <p>
-                  Site đang chạy với mock data sample. Thêm `VITE_GOOGLE_SHEET_CSV_URL` để chuyển
-                  sang dữ liệu thật.
-                </p>
-              ) : null}
-            </div>
-          </div>
-        </section>
-
         <ProductSection
           products={products}
           filter={filter}
           onFilterChange={setFilter}
           defaultContactUrl={CONTACT_URL}
+          statusMessage={statusMessage}
         />
         <FooterSection contactUrl={CONTACT_URL} />
       </main>

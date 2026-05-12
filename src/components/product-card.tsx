@@ -36,24 +36,24 @@ export function ProductCard({ product, defaultContactUrl }: ProductCardProps) {
           </span>
         </div>
 
-        <div className="flex flex-1 flex-col justify-between gap-7 p-6">
-          <div className="space-y-3">
-            <h3 className="line-clamp-2 min-h-[3.25rem] text-[1.35rem] font-semibold tracking-[-0.04em] text-[var(--color-text)]">
+        <div className="flex flex-1 flex-col justify-between gap-2.5 p-5">
+          <div className="space-y-1">
+            <h3 className="line-clamp-2 min-h-[2.8rem] text-[1.35rem] font-semibold tracking-[-0.04em] text-[var(--color-text)]">
               {product.name}
             </h3>
-            <p className="text-[2.1rem] font-black tracking-[-0.05em] text-[var(--color-primary-strong)]">
+            <p className="text-[2rem] font-black tracking-[-0.05em] text-[var(--color-primary-strong)]">
               {product.price}
             </p>
             {product.note ? (
-              <p className="line-clamp-3 min-h-[4.5rem] text-[15px] leading-7 text-[var(--color-muted)]">
+              <p className="line-clamp-3 min-h-[3rem] text-[15px] leading-5.5 text-[var(--color-muted)]">
                 {product.note}
               </p>
             ) : (
-              <div className="min-h-[4.5rem]" />
+              <div className="min-h-[3rem]" />
             )}
           </div>
 
-          <div className="mt-auto flex gap-3 max-sm:flex-col">
+          <div className="mt-auto flex gap-2 max-sm:flex-col">
             <a
               href={product.referenceUrl}
               target="_blank"

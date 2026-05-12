@@ -9,6 +9,7 @@ type ProductSectionProps = {
   filter: ProductFilter
   onFilterChange: (filter: ProductFilter) => void
   defaultContactUrl: string
+  statusMessage: string
 }
 
 export function ProductSection({
@@ -16,6 +17,7 @@ export function ProductSection({
   filter,
   onFilterChange,
   defaultContactUrl,
+  statusMessage,
 }: ProductSectionProps) {
   const counts = {
     all: products.length,
@@ -27,14 +29,15 @@ export function ProductSection({
     filter === 'all' ? products : products.filter((product) => product.status === filter)
 
   return (
-    <section id="products" data-reveal className="reveal px-6 py-10 sm:px-8 lg:px-12">
-      <div className="mx-auto max-w-7xl space-y-8">
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
+    <section id="products" data-reveal className="reveal px-6 py-7 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl space-y-3">
             <p className="eyebrow text-[11px] uppercase tracking-[0.4em]">Danh sách sản phẩm</p>
-            <h2 className="heading-section mt-3 max-w-3xl text-3xl font-bold text-[var(--color-text)] sm:text-4xl">
+            <h2 className="heading-section max-w-3xl text-3xl font-bold text-[var(--color-text)] sm:text-[2.45rem]">
               Chọn món hợp gu, xem giá ngay, rồi nhắn mình để chốt nhanh.
             </h2>
+            <p className="text-sm leading-6 text-[var(--color-muted)]">{statusMessage}</p>
           </div>
 
           <FilterTabs activeFilter={filter} counts={counts} onChange={onFilterChange} />
