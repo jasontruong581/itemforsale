@@ -1,4 +1,3 @@
-import { mockProducts } from '../data/mock-products'
 import type { Product, ProductStatus } from '../types/product'
 import { parseCsv } from './csv'
 
@@ -35,7 +34,7 @@ export const hasRemoteSheet = Boolean(GOOGLE_SHEET_CSV_URL)
 
 export const loadProducts = async () => {
   if (!GOOGLE_SHEET_CSV_URL) {
-    return mockProducts
+    throw new Error('Missing VITE_GOOGLE_SHEET_CSV_URL')
   }
 
   const response = await fetch(GOOGLE_SHEET_CSV_URL)

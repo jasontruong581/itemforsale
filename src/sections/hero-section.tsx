@@ -58,13 +58,13 @@ export function HeroSection({
 
           <div className="grid gap-5 lg:grid-cols-[minmax(0,1.35fr)_auto] lg:items-end">
             <div className="max-w-3xl space-y-4">
-              <p className="eyebrow text-[11px] uppercase tracking-[0.4em]">Giá rõ. Link thật. Chốt nhanh.</p>
+              <p className="eyebrow text-[11px] uppercase tracking-[0.4em]">Giá tốt. Chốt nhanh. HCM Bình Thạnh.</p>
               <h1 className="heading-display max-w-3xl text-[2.7rem] font-black text-[var(--color-text)] sm:text-[3.6rem] lg:text-[4.55rem]">
-                Đồ mình từng mua,
-                <span className="mt-1 block text-[var(--color-primary-strong)]">giờ để lại với giá đẹp.</span>
+                Đồ săn sale, new 100%,
+                <span className="mt-1 block text-[var(--color-primary-strong)]">giá đẹp.</span>
               </h1>
               <p className="max-w-lg text-[15px] leading-6 text-[var(--color-muted)]">
-                Vào là xem sản phẩm ngay. Không vòng vo, không nhiều lớp thông tin.
+                Sản phẩm hàng new 100%,chất lượng, giá tốt, sẵn sàng cho bạn, ưu tiên gdtt.
               </p>
 
               <div className="flex flex-wrap gap-3 pt-1">
@@ -75,7 +75,9 @@ export function HeroSection({
                   Xem sản phẩm
                 </a>
                 <a
-                  href="#contact"
+                  href="https://www.m.me/tien.tran.534956/"
+                  target="_blank"
+                  rel="noreferrer"
                   className="rounded-full border border-[color:var(--color-border)] bg-[var(--color-card-strong)] px-6 py-3 text-sm font-semibold text-[var(--color-text)] transition duration-300 hover:-translate-y-0.5"
                 >
                   Liên hệ nhanh

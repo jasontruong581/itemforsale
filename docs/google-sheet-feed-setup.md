@@ -26,4 +26,4 @@ VITE_GOOGLE_SHEET_CSV_URL="https://docs.google.com/spreadsheets/d/e/.../pub?outp
 
 - `status` should be `available` or `sold`
 - `contact_url` can be blank if you want to use the global CTA
-- if the feed fails, the site falls back to mock sample data
+- `VITE_GOOGLE_SHEET_CSV_URL` is required for local run and deployment

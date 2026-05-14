@@ -37,7 +37,6 @@ export function ProductSection({
             <h2 className="heading-section max-w-3xl text-3xl font-bold text-[var(--color-text)] sm:text-[2.45rem]">
               Chọn món hợp gu, xem giá ngay, rồi nhắn mình để chốt nhanh.
             </h2>
-            <p className="text-sm leading-6 text-[var(--color-muted)]">{statusMessage}</p>
           </div>
 
           <FilterTabs activeFilter={filter} counts={counts} onChange={onFilterChange} />

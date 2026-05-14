@@ -8,7 +8,7 @@
 
 ## Environment
 
-Add `VITE_GOOGLE_SHEET_CSV_URL` only when you are ready to switch from mock data to the live Google Sheet feed.
+Add `VITE_GOOGLE_SHEET_CSV_URL` in Cloudflare Pages for both `Production` and `Preview`.
 
 ## Deployment Flow
 
@@ -16,9 +16,10 @@ Add `VITE_GOOGLE_SHEET_CSV_URL` only when you are ready to switch from mock data
 2. Create a new Cloudflare Pages project.
 3. Connect the repo.
 4. Use the build settings above.
-5. Deploy.
+5. Add `VITE_GOOGLE_SHEET_CSV_URL` in project settings.
+6. Deploy.
 
 ## Notes
 
-- the site works immediately with mock sample data
-- if the Google Sheet feed is unreachable, the site still falls back to the sample dataset
+- the deployment depends on a public Google Sheet CSV URL
+- if the feed is unreachable, the UI shows an error instead of falling back to sample data

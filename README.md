@@ -22,14 +22,10 @@ npm run dev
 npm run build
 ```
 
-## Data Modes
+## Data Source
 
-The site supports two modes:
-
-1. Mock sample data out of the box
-2. Google Sheet public CSV feed through env config
-
-Create `.env.local` from `.env.example` if you want to connect a real sheet.
+The site reads product data from a published Google Sheet CSV feed.
+Create `.env.local` from `.env.example` and set `VITE_GOOGLE_SHEET_CSV_URL` before running or deploying the app.
 
 ## Google Sheet Columns
 
@@ -43,5 +39,6 @@ Detailed setup is in [docs/google-sheet-feed-setup.md](docs/google-sheet-feed-se
 
 - Build command: `npm run build`
 - Output directory: `dist`
+- Environment variable: `VITE_GOOGLE_SHEET_CSV_URL`
 
 Detailed deployment notes are in [docs/cloudflare-pages-deploy.md](docs/cloudflare-pages-deploy.md).

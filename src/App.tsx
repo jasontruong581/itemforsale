@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { CONTACT_URL, mockProducts } from './data/mock-products'
+import { CONTACT_URL } from './config/site'
 import { hasRemoteSheet, loadProducts } from './lib/products'
 import { FooterSection } from './sections/footer-section'
 import { HeroSection } from './sections/hero-section'
@@ -9,18 +9,16 @@ import type { Product } from './types/product'
 type ThemeMode = 'day' | 'night'
 
 function App() {
-  const [products, setProducts] = useState<Product[]>(mockProducts)
+  const [products, setProducts] = useState<Product[]>([])
   const [theme, setTheme] = useState<ThemeMode>(() => {
     if (typeof window === 'undefined') {
-      return 'day'
+      return 'night'
     }
 
     const storedTheme = window.localStorage.getItem('sale-personal-theme')
     return storedTheme === 'night' ? 'night' : 'day'
   })
-  const [loadState, setLoadState] = useState<'loading' | 'ready' | 'error'>(
-    hasRemoteSheet ? 'loading' : 'ready',
-  )
+  const [loadState, setLoadState] = useState<'loading' | 'ready' | 'error'>('loading')
   const [errorMessage, setErrorMessage] = useState('')
   const [filter, setFilter] = useState<'all' | 'available' | 'sold'>('all')
 
@@ -85,10 +83,10 @@ function App() {
     loadState === 'loading'
       ? 'Đang nạp dữ liệu từ Google Sheet...'
       : loadState === 'error'
-        ? `Không tải được Google Sheet nên site đang dùng mock data sample. Chi tiết: ${errorMessage}`
+        ? `Không tải được Google Sheet. Chi tiết: ${errorMessage}`
         : hasRemoteSheet
           ? 'Dữ liệu hiện đang lấy từ Google Sheet public feed.'
-          : 'Site đang chạy với mock data sample. Thêm VITE_GOOGLE_SHEET_CSV_URL để chuyển sang dữ liệu thật.'
+          : 'Chưa cấu hình Google Sheet public feed.'
 
   return (
     <div
@@ -113,7 +111,7 @@ function App() {
           defaultContactUrl={CONTACT_URL}
           statusMessage={statusMessage}
         />
-        <FooterSection contactUrl={CONTACT_URL} />
+        <FooterSection />
       </main>
     </div>
   )
